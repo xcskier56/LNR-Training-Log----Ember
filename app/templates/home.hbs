@@ -1,0 +1,28 @@
+{{outlet}}
+
+{{#links-with-follower class="navbar navbar-light bg-faded navbar-fixed-bottom"}}
+  {{#link-to 'home.stats' tagName='li' class='nav-item'}}
+    <a class="nav-link">
+      <i class="fa fa-database fa-2x" aria-hidden="true"></i>
+      Stats
+    </a>
+  {{/link-to}}
+  {{#link-to 'home.index' tagName='li' class='nav-item'}}
+    <a class="nav-link">
+      <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+      Home
+    </a>
+  {{/link-to}}
+  {{#link-to 'home.logger' tagName='li' class='nav-item'}}
+    <a class="nav-link">
+      <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+      Logger
+    </a>
+  {{/link-to}}
+  {{#link-to 'home.settings' tagName='li' class='nav-item'}}
+    <a class="nav-link">
+      <i class="fa fa-cog fa-2x" aria-hidden="true"></i>
+      Settings
+    </a>
+  {{/link-to}}
+{{/links-with-follower}}

@@ -1,0 +1,10 @@
+**/frontend.js
+**/vendor.js
+
+
+frontend.js
+vendor.js
+
+./dist/**/*
+/dist/**/*
+dist/**/*

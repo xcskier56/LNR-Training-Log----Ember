@@ -1,0 +1,39 @@
+{
+  "extends": "airbnb-base/legacy",
+  "installedESLint": true,
+  "plugins": ["eslint-plugin-ember"],
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
+    }
+  },
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "object-shorthand": 0,
+    "no-underscore-dangle": 0,
+    "arrow-body-style": ["error", "always"],
+    "new-cap": 0,
+    "import/no-unresolved": 0,
+    "no-use-before-define": ["error", { "functions": false, "classes": true }],
+    "newline-per-chained-call": [0, { "ignoreChainWithDepth": 2 }],
+    "one-var": ["error", { "uninitialized": "always", "initialized": "never" }],
+    "one-var-declaration-per-line": 0,
+    "prefer-rest-params": 0
+  },
+  "globals": {
+    "visit": true,
+    "server": true,
+    "andThen": true,
+    "moment": true,
+    "PushNotification": true,
+    "EmberENV": true,
+    "Hammer": true,
+    "currentPath": true,
+    "FastClick": true,
+    "Offline": true,
+    "Cleave": true,
+    "intlTelInputUtils": true
+  }
+}
