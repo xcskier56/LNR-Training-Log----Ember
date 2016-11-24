@@ -1,4 +1,4 @@
-<form {{action 'saveWorkout' on='submit'}}>
+<form style="padding: 0 10px;" {{action 'saveWorkout' on='submit'}}>
   <div class="form-group row {{if validationErrors.date 'has-warning' }}">
     <label for="workout-date" class="form-control-label col-xs-3 col-form-label">Date</label>
     <div class="col-xs-9">
@@ -34,40 +34,52 @@
         {{validationErrors.duration}}
       {{/if}}
     </label>
-    <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">L1</label>
-    <div class="col-xs-3">
+    <div class="col-xs-1">
+      <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">L1</label>
+    </div>
+    <div class="col-xs-2">
       <input type="number" onchange={{action 'l1DurationChanged' value="target.value"}} onkeyup={{action 'l1DurationChanged' value="target.value"}}
        class="form-control" id="l1-duration" placeholder="L1" value={{l1}}>
     </div>
 
     {{!-- Level 2 --}}
-    <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">L2</label>
-    <div class="col-xs-3">
+    <div class="col-xs-1 offset-xs-1">
+      <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">L2</label>
+    </div>
+    <div class="col-xs-2">
       <input type="number" onchange={{action 'l2DurationChanged' value="target.value"}} onkeyup={{action 'l2DurationChanged' value="target.value"}} class="form-control" id="l2-duration" placeholder="L2" value={{l2}}>
     </div>
 
     {{!-- Level 3 --}}
-    <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">L3</label>
-    <div class="col-xs-3">
+    <div class="col-xs-1 offset-xs-1">
+      <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">L3</label>
+    </div>
+    <div class="col-xs-2">
       <input type="number" onchange={{action 'l3DurationChanged' value="target.value"}} onkeyup={{action 'l3DurationChanged' value="target.value"}} class="form-control" id="l3-duration" placeholder="L3" value={{l3}}>
     </div>
   </div>
   <div class="form-group row {{if validationErrors.duration 'has-warning' }}">
     {{!-- Level 4 --}}
-    <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">L4</label>
-    <div class="col-xs-3">
+    <div class="col-xs-1">
+      <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">L4</label>
+    </div>
+    <div class="col-xs-2">
       <input type="number" onchange={{action 'l4DurationChanged' value="target.value"}} onkeyup={{action 'l4DurationChanged' value="target.value"}} class="form-control" id="l4-duration" placeholder="L4" value={{l4}}>
     </div>
 
     {{!-- Level 5 --}}
-    <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">L5</label>
-    <div class="col-xs-3">
+    <div class="col-xs-1 offset-xs-1">
+      <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">L5</label>
+    </div>
+    <div class="col-xs-2">
       <input type="number" onchange={{action 'l5DurationChanged' value="target.value"}} onkeyup={{action 'l5DurationChanged' value="target.value"}} class="form-control" id="l5-duration" placeholder="L5" value={{l5}}>
     </div>
 
     {{!-- Strength --}}
-    <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">Str</label>
-    <div class="col-xs-3">
+    <div class="col-xs-1 offset-xs-1">
+      <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">Str</label>
+    </div>
+    <div class="col-xs-2">
       <input type="number" onchange={{action 'strDurationChanged' value="target.value"}} onkeyup={{action 'strDurationChanged' value="target.value"}} class="form-control" id="str-duration" placeholder="Str" value={{str}}>
     </div>
   </div>

@@ -38,7 +38,6 @@ export default Ember.Component.extend({
       l5: null,
       str: null,
       feelingValue: null,
-      workoutTypes: [],
       workoutDate: null,
       rawDate: null,
       workoutTypeChoice: null,
