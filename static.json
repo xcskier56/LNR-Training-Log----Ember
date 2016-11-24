@@ -1,0 +1,8 @@
+{
+  "https_only": true,
+  "proxies": {
+    "/api/": {
+      "origin": "https://lnr-training-log-api.herokuapp.com/"
+    }
+  }
+}
