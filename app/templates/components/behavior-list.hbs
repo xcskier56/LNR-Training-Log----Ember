@@ -1,0 +1,47 @@
+{{#each orderedGroupedWorkouts as |week|}}
+  <br>
+  <div class="row text-center">
+    <div class="stat-row">
+      <div class="stat-block">
+        <h4>{{week.dateInfo.title}}</h4>
+        <h6>{{week.dateInfo.range}}</h6>
+      </div>
+      <div class="stat-block">
+        <h1>{{week.weekStats.duration}}</h1>
+        <h6>Hours</h6>
+      </div>
+    </div>
+  </div>
+  <table class="table">
+    <tbody>
+      {{#each week.workouts as |workout|}}
+        <tr>
+          <td>{{workout.formattedDate}}</td>
+          <td>{{workout.name}}</td>
+          <td>{{workout.totalDuration}}</td>
+        </tr>
+        {{#if workout.notes}}
+          <tr>
+            <td colspan="3">{{workout.notes}}</td>
+          </tr>
+        {{/if}}
+      {{/each}}
+    </tbody>
+  </table>
+{{/each}}
+<center>
+  {{#if isLoadingWorkouts}}
+    Loading...
+  {{else}}
+    {{#if hasMoreWorkouts}}
+      <hr>
+      <a class="text-primary" {{action 'loadMoreWorkouts'}}>
+        load more
+        <br>
+        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+      </a>
+      <br>
+      <br>
+    {{/if}}
+  {{/if}}
+</center>

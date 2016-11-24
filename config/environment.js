@@ -14,8 +14,18 @@ module.exports = function (environment) {
     },
 
     'ember-simple-auth': {
-      routeAfterAuthentication: 'home.me',
-      routeIfAlreadyAuthenticated: 'home.me'
+      routeAfterAuthentication: 'home.logger',
+      routeIfAlreadyAuthenticated: 'home.logger'
+    },
+
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self' data:",
+      'connect-src': "'self'",
+      'img-src': "'self' data:",
+      'style-src': "'self' 'unsafe-inline'",
+      'frame-src': "'self'"
     },
 
     APP: {

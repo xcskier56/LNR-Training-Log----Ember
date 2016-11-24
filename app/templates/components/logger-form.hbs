@@ -1,0 +1,102 @@
+<form {{action 'saveWorkout' on='submit'}}>
+  <div class="form-group row {{if validationErrors.date 'has-warning' }}">
+    <label for="workout-date" class="form-control-label col-xs-3 col-form-label">Date</label>
+    <div class="col-xs-9">
+      <input type="date" onchange={{action 'dateChanged' value="target.value"}} class="form-control" id="workout-date" placeholder="Date" value={{rawDate}}>
+      {{#if validationErrors.date}}
+        <div class="form-control-feedback">{{validationErrors.date}}</div>
+      {{/if}}
+    </div>
+  </div>
+
+  {{!-- Discipline Selector --}}
+  <div class="form-group row {{if validationErrors.name 'has-warning' }}">
+    <label for="workout-discipline" class="form-control-label col-xs-3 col-form-label">Discipline</label>
+    <div class="col-xs-9">
+      <select style='width: 100%' class="form-control custom-select" onchange={{action "workoutTypeChanged" value="target.value"}}>
+        <option disabled selected value> -- select an option -- </option>
+        {{#each workoutTypes as |wtOpt|}}
+          <option value={{wtOpt.id}} selected={{eq workoutTypeChoice.id wtOpt.id}}>{{wtOpt.name}}</option>
+        {{/each}}
+      </select>
+      {{#if validationErrors.name}}
+        <div class="form-control-feedback">{{validationErrors.name}}</div>
+      {{/if}}
+    </div>
+  </div>
+
+
+  <div class="form-group row {{if validationErrors.duration 'has-warning' }}">
+    {{!-- Level 1 --}}
+    <label class="form-control-label col-xs-12 col-form-label">
+      Duration (in minutes)
+      {{#if validationErrors.duration }}
+        {{validationErrors.duration}}
+      {{/if}}
+    </label>
+    <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">L1</label>
+    <div class="col-xs-3">
+      <input type="number" onchange={{action 'l1DurationChanged' value="target.value"}} onkeyup={{action 'l1DurationChanged' value="target.value"}}
+       class="form-control" id="l1-duration" placeholder="L1" value={{l1}}>
+    </div>
+
+    {{!-- Level 2 --}}
+    <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">L2</label>
+    <div class="col-xs-3">
+      <input type="number" onchange={{action 'l2DurationChanged' value="target.value"}} onkeyup={{action 'l2DurationChanged' value="target.value"}} class="form-control" id="l2-duration" placeholder="L2" value={{l2}}>
+    </div>
+
+    {{!-- Level 3 --}}
+    <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">L3</label>
+    <div class="col-xs-3">
+      <input type="number" onchange={{action 'l3DurationChanged' value="target.value"}} onkeyup={{action 'l3DurationChanged' value="target.value"}} class="form-control" id="l3-duration" placeholder="L3" value={{l3}}>
+    </div>
+  </div>
+  <div class="form-group row {{if validationErrors.duration 'has-warning' }}">
+    {{!-- Level 4 --}}
+    <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">L4</label>
+    <div class="col-xs-3">
+      <input type="number" onchange={{action 'l4DurationChanged' value="target.value"}} onkeyup={{action 'l4DurationChanged' value="target.value"}} class="form-control" id="l4-duration" placeholder="L4" value={{l4}}>
+    </div>
+
+    {{!-- Level 5 --}}
+    <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">L5</label>
+    <div class="col-xs-3">
+      <input type="number" onchange={{action 'l5DurationChanged' value="target.value"}} onkeyup={{action 'l5DurationChanged' value="target.value"}} class="form-control" id="l5-duration" placeholder="L5" value={{l5}}>
+    </div>
+
+    {{!-- Strength --}}
+    <label for="workout-discipline" class="form-control-label col-xs-1 col-form-label">Str</label>
+    <div class="col-xs-3">
+      <input type="number" onchange={{action 'strDurationChanged' value="target.value"}} onkeyup={{action 'strDurationChanged' value="target.value"}} class="form-control" id="str-duration" placeholder="Str" value={{str}}>
+    </div>
+  </div>
+
+  {{!-- Feeling --}}
+  <div class="form-group row {{if validationErrors.feeling 'has-warning' }}">
+    <label class="form-control-label col-xs-12 col-form-label">Feeling</label>
+    <div class="btn-group count-5" data-toggle="buttons">
+      {{#radio-button value="1" classNames='btn btn-primary' groupValue=feelingValue changed="feelingChanged"}}1{{/radio-button}}
+      {{#radio-button value="2" classNames='btn btn-primary' groupValue=feelingValue changed="feelingChanged"}}2{{/radio-button}}
+      {{#radio-button value="3" classNames='btn btn-primary' groupValue=feelingValue changed="feelingChanged"}}3{{/radio-button}}
+      {{#radio-button value="4" classNames='btn btn-primary' groupValue=feelingValue changed="feelingChanged"}}4{{/radio-button}}
+      {{#radio-button value="5" classNames='btn btn-primary' groupValue=feelingValue changed="feelingChanged"}}5{{/radio-button}}
+    </div>
+    {{#if validationErrors.feeling}}
+      <div style="padding-left:15px" class="form-control-feedback">Please Select</div>
+    {{/if}}
+  </div>
+
+  <div class="form-group row" style="padding-left: 15px; padding-right: 15px;">
+    {{#if isSaving}}
+      <button disabled='disabled' class="btn btn-primary btn-block">Adding...</button>
+    {{else}}
+      {{#if savedSuccessful}}
+        <button class="btn btn-secondary btn-block">Saved!</button>
+      {{else}}
+        <button type="submit" class="btn btn-primary btn-block">Add</button>
+      {{/if}}
+    {{/if}}
+
+  </div>
+</form>

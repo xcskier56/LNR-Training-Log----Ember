@@ -7,7 +7,7 @@ export default Ember.Route.extend({
 
   beforeModel() {
     if (this.get('session.isAuthenticated')) {
-      this.transitionTo('home');
+      this.transitionTo('home.logger');
     }
   }
 });
