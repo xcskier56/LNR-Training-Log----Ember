@@ -1,8 +1,18 @@
 {
   "predef": [
+    "server",
     "document",
     "window",
-    "-Promise"
+    "-Promise",
+    "moment",
+    "trackJs",
+    "Offline",
+    "FastClick",
+    "$",
+    "PushNotification",
+    "EmberENV",
+    "Hammer",
+    "Cleave"
   ],
   "browser": true,
   "boss": true,
