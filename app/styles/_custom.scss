@@ -54,6 +54,9 @@ input[type="date"] {
 
 .btn-group.count-5 {
   width: 100%;
+  .btn + .btn {
+    margin-left: 0;
+  }
   & > label {
     width: 20%;
   }
