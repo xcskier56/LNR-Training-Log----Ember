@@ -22,6 +22,10 @@ export default DS.Model.extend({
     return moment(this.get('date')).format('M/D/YYYY');
   }),
 
+  weekDay: computed('date', function() {
+    return moment(this.get('date')).format('ddd');
+  }),
+
   totalDuration: computed('level1Duration', 'level2Duration', 'level3Duration', 'level4Duration',
     'level5Duration', function () {
       const attrs = this.getProperties('level1Duration', 'level2Duration', 'level3Duration', 'level4Duration', 'level5Duration');

@@ -15,10 +15,11 @@
   <table class="table">
     <tbody>
       {{#each week.workouts as |workout|}}
-        {{#link-to 'home.workouts.workout' workout.id tagName='tr' class="clickable-object"}}
-            <td>{{workout.formattedDate}}</td>
+        {{#link-to 'home.workouts.workout' workout tagName='tr' class="clickable-object"}}
+            <td>{{workout.weekDay}}</td>
             <td>{{workout.name}}</td>
             <td>{{workout.formattedTotalDuration}}</td>
+            <td>{{workout.feeling}}/5</td>
             <td><i class='fa fa-chevron-right utility'></i></td>
         {{/link-to}}
       {{/each}}

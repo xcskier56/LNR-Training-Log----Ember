@@ -5,8 +5,10 @@ export default Ember.Controller.extend({
 
   actions: {
     deleteWorkout(id) {
-      const workout = this.get('store').peekRecord('workout', id);
-      workout.destroyRecord();
+      const res = window.confirm('Are you sure you want to delete this workout?');
+      if (res) {
+        this.get('store').peekRecord('workout', id).destroyRecord();
+      }
       return false;
     }
   }

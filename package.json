@@ -48,6 +48,7 @@
     "eslint-config-airbnb-base": "9.0.0",
     "eslint-plugin-ember": "^1.1.0",
     "eslint-plugin-import": "^2.0.1",
-    "eslint-plugin-jsx-a11y": "^1.5.5"
+    "eslint-plugin-jsx-a11y": "^1.5.5",
+    "liquid-fire": "0.24.0"
   }
 }

@@ -45,12 +45,6 @@ export default ActiveModelAdapter.extend({
     return this._super.apply(this, arguments);
   },
 
-  findRecord(store, type, id, snapshot) {
-    const key = `${snapshot.type.modelName}-${snapshot.id}`;
-    this.DataRequestLog.push(key);
-    return this._super(...arguments);
-  },
-
   shouldBackgroundReloadAll() {
     return true;
   },
