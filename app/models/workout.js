@@ -8,12 +8,12 @@ export default DS.Model.extend({
   date: DS.attr('date'),
   feeling: DS.attr('number'),
   notes: DS.attr('string'),
-  level1Duration: DS.attr('number'),
-  level2Duration: DS.attr('number'),
-  level3Duration: DS.attr('number'),
-  level4Duration: DS.attr('number'),
-  level5Duration: DS.attr('number'),
-  strengthDuration: DS.attr('number'),
+  level1Duration: DS.attr('number', { defaultValue: 0 }),
+  level2Duration: DS.attr('number', { defaultValue: 0 }),
+  level3Duration: DS.attr('number', { defaultValue: 0 }),
+  level4Duration: DS.attr('number', { defaultValue: 0 }),
+  level5Duration: DS.attr('number', { defaultValue: 0 }),
+  strengthDuration: DS.attr('number', { defaultValue: 0 }),
 
   user: DS.belongsTo('user'),
   workoutType: DS.belongsTo('workoutType'),
@@ -28,5 +28,10 @@ export default DS.Model.extend({
       return Object.values(attrs)
         .filter((a) => { return !!a; })
         .reduce((a, b) => { return a + b; }, 0);
-    })
+    }),
+
+  formattedTotalDuration: computed('totalDuration', function () {
+    const milliseconds = parseInt(this.get('totalDuration'), 10) * 60 * 1000;
+    return moment.utc(milliseconds).format('H:mm');
+  })
 });

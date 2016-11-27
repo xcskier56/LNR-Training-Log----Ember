@@ -11,7 +11,7 @@ export default Ember.Component.extend({
   hasMoreWorkouts: true,
   isLoadingWorkouts: false,
 
-  orderedGroupedWorkouts: Ember.computed('workouts.[]', 'mondays.[]', function () {
+  orderedGroupedWorkouts: Ember.computed('workouts.[]', 'mondays.[]', function ordGrpedWrkouts() {
     const dateRange = this.get('mondays');
     const ungroupedWorkouts = this.get('workouts');
     const weekGroups = Ember.A([]);

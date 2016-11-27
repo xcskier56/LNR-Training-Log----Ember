@@ -1,6 +1,23 @@
+.utility {
+  font-size: $font-size-xs !important;
+  color: $text-muted;
+}
+
+.clickable-object {
+  cursor: pointer !important;
+  &:active {
+    background-color: $gray-lightest;
+  }
+}
+
 .text-center {
   text-align: center;
 }
+
+.text-right {
+  text-align: right;
+}
+
 .force-center {
   float: none !important;
   margin-left: auto;

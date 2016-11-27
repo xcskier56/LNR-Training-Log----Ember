@@ -15,16 +15,12 @@
   <table class="table">
     <tbody>
       {{#each week.workouts as |workout|}}
-        <tr>
-          <td>{{workout.formattedDate}}</td>
-          <td>{{workout.name}}</td>
-          <td>{{workout.totalDuration}}</td>
-        </tr>
-        {{#if workout.notes}}
-          <tr>
-            <td colspan="3">{{workout.notes}}</td>
-          </tr>
-        {{/if}}
+        {{#link-to 'home.workouts.workout' workout.id tagName='tr' class="clickable-object"}}
+            <td>{{workout.formattedDate}}</td>
+            <td>{{workout.name}}</td>
+            <td>{{workout.formattedTotalDuration}}</td>
+            <td><i class='fa fa-chevron-right utility'></i></td>
+        {{/link-to}}
       {{/each}}
     </tbody>
   </table>

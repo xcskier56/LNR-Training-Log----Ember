@@ -9,7 +9,9 @@ Router.map(function routerMap() {
   this.route('login');
   this.route('home', function () {
     this.route('logger');
-    this.route('workouts');
+    this.route('workouts', function () {
+      this.route('workout', { path: '/:id' }, function () {});
+    });
     this.route('settings');
     this.route('users', function () {
       this.route('user', { path: '/:user_slug' }, function () {});

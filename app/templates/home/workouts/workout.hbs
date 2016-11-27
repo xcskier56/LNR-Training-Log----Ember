@@ -1,0 +1,43 @@
+<table class="table">
+  {{#link-to 'home.workouts' tagName='tr' class='clickable-object'}}
+    <td style='vertical-align:inherit'><i class="fa fa-chevron-left"></i></td>
+    <td class="text-center"><h4>{{model.name}}</h4></td>
+    <td style='vertical-align:inherit' class="text-right" onclick={{action 'deleteWorkout' model.id}}>
+      <i class="fa fa-trash"></i>
+    </td>
+  {{/link-to}}
+</table>
+<table class="table">
+  <tr>
+    <td>Date</td>
+    <td class='text-right'>{{model.formattedDate}}</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td class='text-right'>{{model.name}}</td>
+  </tr>
+  <tr>
+    <td>Level 1</td>
+    <td class='text-right'>{{model.level1Duration}} min</td>
+  </tr>
+  <tr>
+    <td>Level 2</td>
+    <td class='text-right'>{{model.level2Duration}} min</td>
+  </tr>
+  <tr>
+    <td>Level 3</td>
+    <td class='text-right'>{{model.level3Duration}} min</td>
+  </tr>
+  <tr>
+    <td>Level 4</td>
+    <td class='text-right'>{{model.level4Duration}} min</td>
+  </tr>
+  <tr>
+    <td>Level 5</td>
+    <td class='text-right'>{{model.level5Duration}} min</td>
+  </tr>
+  <tr>
+    <td>Strength</td>
+    <td class='text-right'>{{model.strengthDuration}} min</td>
+  </tr>
+</table>
